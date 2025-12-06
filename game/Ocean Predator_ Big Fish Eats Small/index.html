@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大鱼吃小鱼</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- 主菜单 -->
+        <div class="main-menu" id="mainMenu">
+            <h1 class="game-title">大鱼吃小鱼</h1>
+            <div class="menu-buttons">
+                <button class="menu-button" onclick="selectMode('single')">单人模式</button>
+            </div>
+        </div>
+
+        <!-- 角色选择界面 -->
+        <div class="character-select" id="characterSelect">
+            <button class="back-button" onclick="backToMenu()">返回</button>
+            <h2 class="character-title">选择你的鱼类</h2>
+            <div class="character-options">
+                <div class="character-option" onclick="selectCharacter('normal')">
+                    <div class="character-icon">🐟</div>
+                    <h3>普通鱼</h3>
+                    <p>速度均衡，成长稳定</p>
+                </div>
+                <div class="character-option" onclick="selectCharacter('shark')">
+                    <div class="character-icon">🦈</div>
+                    <h3>鲨鱼</h3>
+                    <p>攻击力强，移动迅速</p>
+                </div>
+                <div class="character-option" onclick="selectCharacter('squid')">
+                    <div class="character-icon">🦑</div>
+                    <h3>墨鱼</h3>
+                    <p>特殊技能：喷墨逃脱</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 游戏界面 -->
+        <div class="game-screen" id="gameScreen">
+            <div class="game-ui">
+                <button class="menu-btn" onclick="showMainMenu()">菜单</button>
+                <div class="score">得分: <span id="score">0</span></div>
+            </div>
+            <canvas id="gameCanvas"></canvas>
+            <button class="skill-button" id="skillButton" onclick="useSkill()">使用技能</button>
+            
+            <!-- 游戏结束界面 -->
+            <div class="game-over" id="gameOver">
+                <h2 class="game-over-title">游戏结束</h2>
+                <div class="final-score">最终得分: <span id="finalScore">0</span></div>
+                <button class="restart-button" onclick="restartGame()">重新开始</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

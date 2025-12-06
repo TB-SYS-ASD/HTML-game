@@ -1,0 +1,87 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    overflow: hidden;
+    cursor: crosshair;
+    font-family: Arial, sans-serif;
+}
+
+#gameCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#timer {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 0 0 15px rgba(255, 255, 255, .8);
+    z-index: 10;
+}
+
+#gameOverModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(30, 30, 30, .85);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 15px;
+    text-align: center;
+    z-index: 100;
+    box-shadow: 0 0 40px rgba(255, 50, 50, .6);
+    border: 1px solid rgba(255, 255, 255, .1);
+}
+
+#gameOverModal h1 {
+    color: #ff4d4d;
+    font-size: 42px;
+    margin-bottom: 35px;
+    text-shadow: 0 0 10px rgba(255, 100, 100, .7);
+}
+
+#restartBtn {
+    background: linear-gradient(45deg, #ff4d4d, #ff1a1a);
+    color: white;
+    border: none;
+    padding: 18px 45px;
+    font-size: 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .3s ease;
+    box-shadow: 0 0 20px rgba(255, 50, 50, .5);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#restartBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 50, 50, .8);
+}
+
+#restartBtn:active {
+    transform: scale(.95);
+}
+
+.player {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle, #4dffff, #00cccc);
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(0, 255, 255, .9);
+    z-index: 5;
+    border: 2px solid rgba(255, 255, 255, .7);
+}

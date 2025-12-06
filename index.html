@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>🎮HTML小游戏🎮</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🎮HTML小游戏🎮</h1>
+        <div class="search-bar">
+            <input id="searchInput" type="text" placeholder="输入游戏名称或简介关键词">
+            <button onclick="filterGames()">搜索</button>
+        </div>
+        <div class="total-tip">共 <span id="total">0</span> 款游戏</div>
+    </header>
+
+    <main id="gameList">
+        <!-- 手写卡片区域：模板示例 -->
+        <div class="game-card" data-name="Ocean Predator_ Big Fish Eats Small" data-desc="Ocean Predator_ Big Fish Eats Small">
+            <h3>大鱼吃小鱼BUT</h3>
+            <p>大鱼吃小鱼，比较简陋。BUG多多</p>
+            <div class="meta">版本：1.0.1 | 作者：TB-SYSTEM</div>
+            <a href=".\game\Ocean Predator_ Big Fish Eats Small\index.html">游玩</a>
+        </div>
+
+        <div class="game-card" data-name="Biosimulator" data-desc="Biosimulator">
+            <h3>生物进化模拟器</h3>
+            <p>模拟生物进化</p>
+            <div class="meta">版本：2.0.1 | 作者：TB-SYSTEM</div>
+            <a href=".\game\Biosimulator\index.html">游玩</a>
+        </div>
+
+        <div class="game-card" data-name="BlackHole Devourer" data-desc="BlackHole Devourer">
+            <h3>吞噬黑洞</h3>
+            <p>模拟黑洞吞噬星球</p>
+            <div class="meta">版本：1.0.1 | 作者：TB-SYSTEM</div>
+            <a href=".\game\BlackHole Devourer\index.html">游玩</a>
+        </div>
+
+        <div class="game-card" data-name="Bullet Hell · Timer Edition" data-desc="Bullet Hell · Timer Edition">
+            <h3>躲避球</h3>
+            <p>躲避随机出现的小球，看看你能撑几秒</p>
+            <div class="meta">版本：1.0.1 | 作者：TB-SYSTEM</div>
+            <a href=".\game\Bullet Hell · Timer Edition\index.html">游玩</a>
+        </div>
+        <!-- 想加几条就继续复制上面块 -->
+    </main>
+
+    <footer>
+        © 2025 小游戏 | 仅供学习交流
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

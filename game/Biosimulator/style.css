@@ -1,0 +1,93 @@
+﻿* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: linear-gradient(135deg, #0a0e27 0%, #1a237e 30%, #3949ab 70%, #5c6bc0 100%);
+    height: 100vh; overflow: hidden; font-family: Arial, sans-serif;
+}
+
+/* 背景粒子 */
+.particle {
+    position: absolute; width: 4px; height: 4px;
+    background: rgba(255, 255, 255, 0.5); border-radius: 50%;
+    animation: float 20s infinite linear;
+}
+@keyframes float {
+    from { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; } 90% { opacity: 1; }
+    to { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+/* 画布 */
+#gameCanvas {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 80%; height: 80%; background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 20px;
+    backdrop-filter: blur(10px); overflow: hidden; cursor: grab;
+}
+#gameCanvas:active { cursor: grabbing; }
+
+/* 控制面板 */
+.control-panel {
+    position: absolute; top: 20px; left: 20px; background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px; padding: 20px; backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+.control-panel h3 { color: #fff; margin-bottom: 15px; text-align: center; text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+.creature-btn {
+    display: block; width: 150px; padding: 12px; margin: 8px 0;
+    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%); color: #fff;
+    border: none; border-radius: 25px; cursor: pointer; font-size: 14px;
+    transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.creature-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); background: linear-gradient(45deg, #764ba2 0%, #667eea 100%); }
+
+/* 统计面板 */
+.stats-panel {
+    position: absolute; top: 20px; right: 20px; background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px; padding: 20px; backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    min-width: 200px;
+}
+.stats-panel h3 { color: #fff; margin-bottom: 15px; text-align: center; text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+.stat-item { display: flex; justify-content: space-between; margin: 10px 0; color: #fff; font-size: 14px; }
+.stat-value { font-weight: bold; color: #64b5f6; }
+
+/* 规则面板 */
+.rules-panel {
+    position: absolute; bottom: 20px; left: 20px; background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px; padding: 15px; backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 300px;
+}
+.rules-panel h4 { color: #fff; margin-bottom: 10px; text-align: center; text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+.rule-item { color: #fff; font-size: 12px; margin: 5px 0; opacity: 0.8; }
+
+/* 标题 */
+.game-title {
+    position: absolute; top: 30px; left: 50%; transform: translateX(-50%);
+    color: #fff; font-size: 36px; font-weight: bold;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); animation: title-glow 3s infinite;
+}
+@keyframes title-glow {
+    0%, 100% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+    50% { text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(100, 181, 246, 0.6); }
+}
+
+/* 生物 */
+.creature {
+    position: absolute; cursor: grab; user-select: none;
+    display: flex; align-items: center; justify-content: center; font-size: 24px;
+    transition: transform 0.1s ease;
+}
+.creature:active { cursor: grabbing; }
+.creature.child { font-size: 18px; opacity: 0.8; }
+
+/* 交互特效 */
+.interaction-effect {
+    position: absolute; pointer-events: none; font-size: 20px;
+    animation: interaction-popup 1s ease-out forwards;
+}
+@keyframes interaction-popup {
+    0% { transform: translateY(0) scale(0.5); opacity: 1; }
+    100% { transform: translateY(-30px) scale(1.2); opacity: 0; }
+}

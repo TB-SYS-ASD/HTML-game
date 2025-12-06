@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>生物进化模拟器</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- 动态背景粒子 -->
+    <div id="particles"></div>
+
+    <!-- 游戏标题 -->
+    <h1 class="game-title">生物进化模拟器</h1>
+
+    <!-- 游戏画布 -->
+    <div id="gameCanvas"></div>
+
+    <!-- 控制面板 -->
+    <div class="control-panel">
+        <h3>🎮 控制面板</h3>
+        <button class="creature-btn" onclick="createCreature('human-male')">👨 男性人类</button>
+        <button class="creature-btn" onclick="createCreature('human-female')">👩 女性人类</button>
+        <button class="creature-btn" onclick="createCreature('zombie')">T 僵尸</button>
+        <button class="creature-btn" onclick="createCreature('vampire')">R 吸血鬼</button>
+    </div>
+
+    <!-- 统计面板 -->
+    <div class="stats-panel">
+        <h3>📊 统计数据</h3>
+        <div class="stat-item"><span>👨 男性人类:</span><span class="stat-value" id="male-count">0</span></div>
+        <div class="stat-item"><span>👩 女性人类:</span><span class="stat-value" id="female-count">0</span></div>
+        <div class="stat-item"><span>👶 小孩:</span><span class="stat-value" id="child-count">0</span></div>
+        <div class="stat-item"><span>🧟 僵尸:</span><span class="stat-value" id="zombie-count">0</span></div>
+        <div class="stat-item"><span>🧛 吸血鬼:</span><span class="stat-value" id="vampire-count">0</span></div>
+        <hr style="margin:15px 0;border:1px solid rgba(255,255,255,0.2);">
+        <div class="stat-item"><span>总计:</span><span class="stat-value" id="total-count">0</span></div>
+    </div>
+
+    <!-- 规则说明 -->
+    <div class="rules-panel">
+        <h4>📜 进化规则</h4>
+        <div class="rule-item">👨👩 → 👶 (交配产生小孩)</div>
+        <div class="rule-item">🧛 → 👨 = 🧟 (吸血鬼咬人变僵尸)</div>
+        <div class="rule-item">🧛 + 👨 = 🧛🧛 (吸血鬼分裂)</div>
+        <div class="rule-item">👨 + 🧟 = 👨 (治疗僵尸)</div>
+        <div class="rule-item">👶 → 👨/👩 (小孩成长)</div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

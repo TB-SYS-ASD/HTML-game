@@ -1,0 +1,243 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 50%, #2193b0 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.game-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(135deg, #141E30 0%, #243B55 50%, #4286f4 100%);
+}
+
+/* 主菜单样式 */
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #003973 0%, #E5E5BE 100%);
+}
+
+.game-title {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+    margin-bottom: 3rem;
+    text-align: center;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menu-button {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    background: linear-gradient(45deg, #2193b0, #6dd5ed);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.menu-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* 角色选择界面 */
+.character-select {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #373B44 0%, #4286f4 100%);
+}
+
+.character-title {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.character-options {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.character-option {
+    padding: 2rem;
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    color: white;
+}
+
+.character-option:hover {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.05);
+}
+
+.character-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* 游戏界面 */
+.game-screen {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #536976 0%, #292E49 100%);
+}
+
+.game-ui {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(0,0,0,0.3);
+    color: white;
+    z-index: 100;
+}
+
+.menu-btn {
+    padding: 0.5rem 1rem;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.score {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.skill-button {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.skill-button:hover {
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.skill-button:disabled {
+    background: gray;
+    cursor: not-allowed;
+}
+
+/* 游戏画布 */
+#gameCanvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* 游戏结束界面 */
+.game-over {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 200;
+}
+
+.game-over-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.final-score {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.restart-button {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    background: linear-gradient(45deg, #56ab2f, #a8e063);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.restart-button:hover {
+    transform: translateY(-2px);
+}
+
+/* 返回按钮 */
+.back-button {
+    padding: 0.5rem 1rem;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.back-button:hover {
+    background: rgba(255,255,255,0.3);
+}

@@ -1,0 +1,106 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#gameContainer {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    border: 2px solid #333;
+    background: radial-gradient(circle at center, #001122, #000);
+}
+
+#blackHole {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #000, #4a0080, #000);
+    border-radius: 50%;
+    box-shadow: 0 0 30px #4a0080, inset 0 0 20px #000;
+    transition: transform .1s ease;
+    pointer-events: none;
+}
+
+.food {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #fff, #ccc);
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff;
+}
+
+#scoreBoard {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, .7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+#timer {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+#score {
+    font-size: 20px;
+    color: #0f0;
+}
+
+#gameOver {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(0, 0, 0, .9);
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid #333;
+    display: none;
+}
+
+#gameOver h2 {
+    font-size: 36px;
+    color: #f00;
+    margin-bottom: 20px;
+}
+
+#finalScore, #survivalTime {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+#restartBtn {
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 20px;
+    background: #4a0080;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background .3s;
+}
+
+#restartBtn:hover {
+    background: #6a00b0;
+}
