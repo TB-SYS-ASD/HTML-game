@@ -17,7 +17,7 @@ html,body{
 body{
     color:var(--text);
     line-height:1.6;
-    background:url("https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?auto=format&fit=crop&w=1920&q=80") no-repeat center/cover fixed;
+    background:url("https://pica.zhimg.com/v2-008e004adb7adfae29b4072d3d2c57b6_1440w.jpg?source=172ae18b") no-repeat center/cover fixed;
     position:relative;
 }
 body::before{
